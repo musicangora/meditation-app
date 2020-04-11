@@ -3,6 +3,7 @@ const app = () => {
   const play = document.querySelector(".play");
   const outline = document.querySelector(".moving-outline circle");
   const video = document.querySelector(".video-container video");
+  const audiovolume = document.getElementById("volume");
 
   // Sound
   const sounds = document.querySelectorAll(".sound-picker button");
@@ -79,6 +80,11 @@ const app = () => {
       video.pause();
     }
   };
+
+  // Set Volume
+  volume.addEventListener("input", function () {
+    song.volume = audiovolume.value;
+  });
 };
 
 app();
